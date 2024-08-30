@@ -53,9 +53,14 @@ const perguntas = [
 
 let atual = 0;
 let perguntaAtual;
-let pontuacao = 0; // Inicie a pontuação em 0
+let pontuacao = 0; 
 
 function mostrarPergunta() {
-    perguntaAtual = perguntas(atual);
-    caixaPerguntas.textContent= perguntaAtual.enunciado
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.innerHTML = "";
+
+    perguntaAtual.alternativas.forEach((alternativas, index) => {
+        
+    }
 }
