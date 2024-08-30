@@ -61,6 +61,9 @@ function mostrarPergunta() {
     caixaAlternativas.innerHTML = "";
 
     perguntaAtual.alternativas.forEach((alternativas, index) => {
-        
-    }
+     const botao = document.createElement("button");
+     botao.addEventListener("click", () => verificaRespota(index));
+     caixaAlternativas.appendChild(botao);
+
+    });
 }
