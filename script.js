@@ -67,3 +67,10 @@ function mostrarPergunta() {
 
     });
 }
+
+// FUNÇÃO VERIFICAR RESPOSTA
+function vereficaRespota(Selections) {
+    if (atual < perguntas.length) {
+        mostrarPergunta();
+    }
+}
