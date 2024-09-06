@@ -72,5 +72,26 @@ function mostrarPergunta() {
 function vereficaRespota(Selections) {
     if (atual < perguntas.length) {
         mostrarPergunta();
+        perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.innerHTML = "";
+
+    pergutaAtual.alternativas.forEach((alternativas, index) => {
+        const botao = document.createElement("button");
+        botao.addEventListener("click", () => verificaResposta(index));
+        caixaAlternativas.appendChild(botao);
+    });
+}
+
+//função vertical respota
+function verificaResposta(Selcione) [{
+    if (seleciona === perguntaAtual.correta){
+        pontuação++;
+    }
+    atual++;
+
+    if(atual< perguntaAtual.length) {
+        mostrarPergunta();
+    }
     }
 }
