@@ -8,71 +8,54 @@ const textoResultado = document.querySelector(".texto-resultado");
 //Arry de objeto contendo as perguntas e alternativas
 const perguntas = [
     {
-        enunciado: "Em relação a maquiagem, o que é Primer?",
+        enunciado: "Qual a idade máxima que um cachorro pode chegar?",
         alternativas: [
-            "é um item que serve para preparar a pele para a maquiagem",
-            "é um item que serve para deixar a pele com um tom uniformiado"
+            "15 anos",
+            "20 anos"
         ],
         correta: 0 // A primeira alternativa é a correta
     },
     {
-        enunciado: "O Modernimo teve como marco inicial a Semana da Arte Moderna, que se realizou entre os dias 11 e 18 de fevereiro de 1922, em qual teatro?",
+        enunciado: "Quantos dias há em um ano bissexto?",
         alternativas: [
-            "teatro municipal do Rio de Janeiro",
-            "teatro municipal de São Paulo"
+            "365",
+            "366"
         ],
         correta: 1 // A segunda alternativa é a correta
     },
     {
-        enunciado: "Qual exercício é o específico para o desenvolvimento dos músculos do braço, especificamente o bíceps?",
+        enunciado: "Qual é o maior planeta do nosso sistema solar?",
         alternativas: [
-            "rosca scott",
-            "remada alta cross"
+            "Terra",
+            "Júpiter"
         ],
-        correta: 0 // A primeira alternativa é a correta
+        correta: 1
     },
     {
-        enunciado: "Qual órgão pertence ao sistema respiratório e digestivo, simultaneamente?",
+        enunciado: "Qual é a capital da França?",
         alternativas: [
-            "traqueia",
-            "faringe"
+            "Paris",
+            "Londres"
         ],
-        correta: 1 // A segunda alternativa é a correta 
+        correta: 0
     },
     {
-        enunciado: "Qual é a única grande metrópole nacional brasileira?",
+        enunciado: "Qual é a fórmula química da água?",
         alternativas: [
-            "são paulo",
-            "santa catarina"
+            "H2O",
+            "CO2"
         ],
-        correta: 0 // A segunda alternativa é a correta 
+        correta: 0
     }
 ];
 
-// inicializa o índice da pergunta atual e a pontuação
+let atual = 0
+let pergutaAtual;
+let pontuacao = 0;
 
-let atual = 0;
-let perguntaAtual;
-let pontuacao = 0; 
-
+//FUNÇÃO MOSTRAR PERGUNTAS
 function mostrarPergunta() {
     perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.innerHTML = "";
-
-    perguntaAtual.alternativas.forEach((alternativas, index) => {
-     const botao = document.createElement("button");
-     botao.addEventListener("click", () => verificaRespota(index));
-     caixaAlternativas.appendChild(botao);
-
-    });
-}
-
-// FUNÇÃO VERIFICAR RESPOSTA
-function vereficaRespota(Selections) {
-    if (atual < perguntas.length) {
-        mostrarPergunta();
-        perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.innerHTML = "";
 
@@ -83,15 +66,16 @@ function vereficaRespota(Selections) {
     });
 }
 
-//função vertical respota
-function verificaResposta(Selcione) [{
-    if (seleciona === perguntaAtual.correta){
-        pontuação++;
+// FUNÇÃO VERIFICAR RESPOSTA
+function vereficaResposta(Seleciona) {
+    if (selecionda === pergutaAtual.correta) {
+        pontuacao++;
     }
     atual++;
 
-    if(atual< perguntaAtual.length) {
+    if (atual < perguntas.length) {
         mostrarPergunta();
-    }
+    } else {
+        mostarResultado();
     }
 }
