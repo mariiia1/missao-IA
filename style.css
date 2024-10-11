@@ -1,12 +1,12 @@
 
 /* DEFINIÇÃO DAS VARIÁVEIS CSS PARA CORES */
 :root {
-    --cor-fundo: #064070;
-    --cor-principal: #0b0d20;
-    --cor-secundaria: #212333;
-    --cor-destaque: #e22b2b;
-    --cor-texto: #15dc51;
-    --cor-fadeButtom: #e29716;
+    --cor-fundo: #718355;
+    --cor-principal: #97a97C;
+    --cor-secundario: #859864;
+    --cor-destaque: #2c55149a; /* Removi a opacidade zero para tornar a cor visível */
+    --cor-texto: #fafafa;
+    --cor-fadeButtom: #1c5a1f;
 }
 
 /* CONFIGURAÇÃO DO ESTILO DO CORPO DA PÁGINA */
@@ -18,14 +18,15 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
 }
 
+/* Estilo da caixa principal */
 .caixa-principal {
     background-color: var(--cor-principal);
     width: 90%;
@@ -36,55 +37,65 @@ img {
     border-radius: 8px;
 }
 
+/* Estilo para o cabeçalho principal */
 h1 {
     color: var(--cor-destaque);
 }
 
+/* Estilo para os botões */
 button {
     background-color: var(--cor-destaque);
     border: none;
     padding: 10px 20px;
     margin: 5px;
-    color: var(--cor-principal);
+    color: var(--cor-texto);
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s; /* Correção aqui */
+    transition: background-color 0.3s, color 0.3s;
     border-radius: 10px;
 }
 
-/* Estilo do botão ao passar o mouse */
+/* Estilo ao passar o mouse sobre o botão */
 button:hover {
     background-color: var(--cor-fadeButtom);
     color: var(--cor-texto);
 }
 
-/* Caixa de resultado */
+/* Estilo ao focar no botão */
+button:focus {
+    outline: 2px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+/* Estilo para a caixa de resultado */
 .caixa-resultado {
-    display: none;
+    display: none; /* Inicialmente oculta */
     text-align: center;
     padding: 20px;
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-secundario);
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     border-radius: 8px;
 }
 
-/* Caixa de resultado visível */
+/* Classe para exibir a caixa de resultado */
 .caixa-resultado.mostrar {
     opacity: 1;
 }
 
+/* Estilo para o texto do resultado */
 .texto-resultado {
     font-size: 1.2rem;
     color: var(--cor-texto);
 }
 
-#video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+/* Responsividade */
+@media (max-width: 600px) {
+    .caixa-principal {
+        padding: 15px;
+    }
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
 }
