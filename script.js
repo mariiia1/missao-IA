@@ -8,42 +8,42 @@ const textoResultado = document.querySelector(".texto-resultado");
 // Array de objeto contendo as perguntas e alternativas
 const perguntas = [
     {
-        enunciado: "Qual a idade máxima que um cachorro pode chegar?",
+        enunciado: "Na maquiagem, o que é Primer?",
         alternativas: [
-            "15 anos",
-            "20 anos"
+            "É um item que serve para preparar a pele para a maquiagem.",
+            "É um item que serve para deixar a pele com um tom uniformizado."
         ],
         correta: 0 // A primeira alternativa é a correta
     },
     {
-        enunciado: "Quantos dias há em um ano bissexto?",
+        enunciado: "O modernismo teve como marco inicial a Semana de Arte Moderna, que se realizou entre os dias 11 e 18 de fevereiro de 1922, em qual teatro?",
         alternativas: [
-            "365",
-            "366"
+            "Teatro municipal do Rio de Janeiro",
+            "Teatro municipal de São Paulo"
         ],
         correta: 1 // A segunda alternativa é a correta
     },
     {
-        enunciado: "Qual é o maior planeta do nosso sistema solar?",
+        enunciado: "Qual exercício é o específico para o desenvolvimento dos músculos do braço, especialmente o bíceps?",
         alternativas: [
-            "Terra",
-            "Júpiter"
+            "Remada alta cross",
+            "Rosca scott"
         ],
         correta: 1
     },
     {
-        enunciado: "Qual é a capital da França?",
+        enunciado: "Qual órgão pertence ao sistema respiratório e digestivo, simultaneamente?",
         alternativas: [
-            "Paris",
-            "Londres"
+            "Faringe",
+            "Traqueia"
         ],
         correta: 0
     },
     {
-        enunciado: "Qual é a fórmula química da água?",
+        enunciado: "Qual é a única grande metrópole nacional brasileira?",
         alternativas: [
-            "H2O",
-            "CO2"
+            "São Paulo",
+            "Santa Catarina"
         ],
         correta: 0
     }
